@@ -36,5 +36,5 @@ nfs:
     - nfs-media:/data
 
 volumes:
-  nfs-media
+  nfs-media:
 
