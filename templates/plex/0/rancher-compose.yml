@@ -37,5 +37,20 @@
     - variable: DATA_PATH
       required: false
       default: /plex_media
-  
-plex:
+    - variable: NFS_SERVER
+      required: true
+      default: 0.0.0.0
+      type: "string"
+    - variable: NFS_SHARE
+      required: true
+      default: /path/to/share
+      type: "string"
+    - variable: NFS_OPT
+      required: true
+      default: "nfsvers=3,rw"
+      type: "string"
+    - variable: NFS_FSTYPE
+      required: true
+      default: "nfs3"
+      type: "string"
+

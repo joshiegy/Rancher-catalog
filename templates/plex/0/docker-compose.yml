@@ -20,5 +20,18 @@ plex:
   volumes:
     - ${CONFIG_PATH}:/config
     - ${TRANSCODE}:/transcode
-    - ${DATA}:/data
+    - nfs-media:/data
+
+nfs:
+  container_name: nfs-media
+  image: outstand/nfs-client
+  restart: unless-stopped
+  environment:
+    - SERVER=${NFS_SERVER}
+    - SHARE=${NFS_SHARE}
+    - MOUNT_OPTIONS=${NFS_OPT}
+    - FSTYPE=${NFS_FSTYPE}
+    - MOUNTPOINT=/data
+  volumes:
+    - nfs-media:/data
 
