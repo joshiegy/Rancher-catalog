@@ -41,7 +41,7 @@
       label: "Where to find media"
       required: false
       required: false
-      default: /plex_media
+      default: /data
     - variable: NFS_SERVER
       label: "NFS-server"
       required: true
@@ -53,10 +53,12 @@
       default: /path/to/share
       type: "string"
     - variable: NFS_OPT
+      label: "NFs options"
       required: true
       default: "nfsvers=3,rw"
       type: "string"
     - variable: NFS_FSTYPE
+      lable: "type of nfs"
       required: true
       default: "nfs3"
       type: "string"
