@@ -1,0 +1,41 @@
+.catalog:
+  name: "Plex"
+  version: "0.1"
+  description: |
+      (Experimental) Plex mediaserver
+  questions:
+    - variable: TZ
+      description: "Timezone"
+      label: "Timezone"
+      required: true
+      default: Europe/Stockholm
+      type: "string"
+    - variable: claimToken
+      description: "Go to https://www.plex.tv/claim to get a token"
+      label: "ClaimToken"
+      required: true
+      default: "Null"
+      type: "string"
+    - variable: Advertise_IP
+      description: "Ip of the service hosting plex and port"
+      label: "Host IP"
+      required: true
+      default: "Null"
+      type: "string"
+    - variable: HOSTNAME
+      description: "Hostname to identify in the webui"
+      label: "Hostname"
+      required: true
+      default: "Rancherplex"
+      type: "string"
+    - variable: CONFIG_PATH
+      required: false
+      default: /plex_config
+    - variable: TRANSCODE_PATH
+      required: false
+      default: /plex_transcode
+    - variable: DATA_PATH
+      required: false
+      default: /plex_media
+  
+plex:
