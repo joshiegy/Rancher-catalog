@@ -1,8 +1,8 @@
-# Rancher Community Catalog 
+# Rancher Catalog - FnFD edit
 
-This catalog provides templates created by the community, and they are not maintained or supported by Rancher Labs.
+This is a merge of other branches and my own additions. Mainly fixing bugs before I purpose to the main catalogue and some programs that I miss.
 
-# License
+# Original License
 Copyright (c) 2014-2017 [Rancher Labs, Inc.](http://rancher.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,3 +16,5 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
