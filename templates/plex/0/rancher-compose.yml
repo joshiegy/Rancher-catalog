@@ -29,19 +29,26 @@
       default: "Rancherplex"
       type: "string"
     - variable: CONFIG_PATH
+      label: "Where to put configs"
       required: false
       default: /plex_config
     - variable: TRANSCODE_PATH
+      label: "Where to put temporary transcodefiles"
+      required: false
       required: false
       default: /plex_transcode
     - variable: DATA_PATH
+      label: "Where to find media"
+      required: false
       required: false
       default: /plex_media
     - variable: NFS_SERVER
+      label: "NFS-server"
       required: true
       default: 0.0.0.0
       type: "string"
     - variable: NFS_SHARE
+      label: "NFS-share"
       required: true
       default: /path/to/share
       type: "string"
