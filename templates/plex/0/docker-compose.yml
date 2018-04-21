@@ -16,10 +16,10 @@ plex:
     - TZ=${TZ}
     - PLEX_CLAIM=${claimToken}
     - ADVERTISE_IP=http://${Advertise_IP}/
+  volumes:
     - ${CONFIG_PATH}:/config
     - ${TRANSCODE}:/transcode
     - nfs-media:/data
-    export: /mnt/store/media
 volumes:
   nfs-media:
     driver: rancher-nfs
