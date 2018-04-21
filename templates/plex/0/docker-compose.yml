@@ -22,19 +22,10 @@ plex:
     - ${TRANSCODE}:/transcode
     - nfs-media:/data
 
-nfs:
-  container_name: nfs-media
-  image: outstand/nfs-client
-  restart: unless-stopped
-  environment:
-    - SERVER=${NFS_SERVER}
-    - SHARE=${NFS_SHARE}
-    - MOUNT_OPTIONS=${NFS_OPT}
-    - FSTYPE=${NFS_FSTYPE}
-    - MOUNTPOINT=/data
-  volumes:
-    - nfs-media:/data
-
 volumes:
   nfs-media:
+    driver: rancher-nfs
+    driver_opts:
+      host: 10.0.0.3
+      exportBase: /mnt/store/media
 
