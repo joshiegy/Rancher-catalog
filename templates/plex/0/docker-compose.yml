@@ -21,11 +21,12 @@ plex:
     - ${CONFIG_PATH}:/config
     - ${TRANSCODE}:/transcode
     - nfs-media:/data
+    
 
 volumes:
   nfs-media:
     driver: rancher-nfs
     driver_opts:
-      host: 10.0.0.3
+      host: ${NFS_SERVER} 
       exportBase: /mnt/store/media
 

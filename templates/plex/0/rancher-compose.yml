@@ -45,12 +45,12 @@
     - variable: NFS_SERVER
       label: "NFS-server"
       required: true
-      default: 0.0.0.0
+      default: 10.0.0.3
       type: "string"
     - variable: NFS_SHARE
       label: "NFS-share"
       required: true
-      default: /path/to/share
+      default: /mnt/store/media
       type: "string"
     - variable: NFS_OPT
       label: "NFs options"
