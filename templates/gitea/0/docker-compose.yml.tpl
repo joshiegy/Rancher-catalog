@@ -1,8 +1,6 @@
 version: '2'
 services:
   gitea:
-    networks:
-      - gitea
     image: gitea/gitea:1.3.0
     expose:
       - "22"
@@ -17,8 +15,6 @@ services:
       - db:db
   db:
     image: mariadb:10
-    networks:
-      - gitea
     environment:
       MYSQL_ROOT_PASSWORD: ${mysql_password}
       MYSQL_DATABASE: 'gitea'
@@ -27,8 +23,6 @@ services:
 {{- end}}
   lb:
     image: rancher/lb-service-haproxy:v0.7.9
-    networks:
-      - gitea
     ports:
     - ${http_port}:${http_port}:/tcp
     - ${ssh_port}:${ssh_port}:/tcp
@@ -40,5 +34,3 @@ volumes:
     driver: ${volume_driver}
 {{- end}}
 
-networks:
-  gitea:
