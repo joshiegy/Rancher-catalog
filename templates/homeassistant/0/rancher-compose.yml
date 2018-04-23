@@ -1,0 +1,28 @@
+version: '2'
+catalog:
+  name: "Hass.io"
+  version: "0.1"
+  description: |
+      (Experimental) Home assistant - the easy home automation platform
+  questions:
+    - variable: NFS_SERVER
+      label: "NFS-server"
+      required: true
+      default: 0.0.0.0
+      type: "string"
+    - variable: NFS_SHARE
+      label: "NFS-share"
+      required: true
+      default: /path/to/confdir
+      type: "string"
+    - variable: NFS_OPT
+      label: "NFS options"
+      required: true
+      default: "nfsvers=3,rw"
+      type: "string"
+    - variable: NFS_FSTYPE
+      lable: "type of nfs"
+      required: true
+      default: "nfs3"
+      type: "string"
+

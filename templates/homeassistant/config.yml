@@ -1,0 +1,5 @@
+name: "Homeassistant"
+description: "Home automation platform"
+version: "0.1"
+category: Automation
+
