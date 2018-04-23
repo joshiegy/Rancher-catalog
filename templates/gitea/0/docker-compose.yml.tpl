@@ -22,8 +22,8 @@ services:
   lb:
     image: rancher/lb-service-haproxy:v0.7.9
     ports:
-    - ${http_port}:${http_port}/tcp
-    - ${ssh_port}:${ssh_port}/tcp
+    - ${http_port}:3000/tcp
+    - ${ssh_port}:22/tcp
 volumes:
   gitea-data:
     driver: ${volume_driver}
