@@ -1,6 +1,7 @@
-.catalog:
+version: '2'
+catalog:
   name: "Plex"
-  version: "0.1"
+  version: "1.0"
   description: |
       (Experimental) Plex mediaserver
   questions:
@@ -31,12 +32,12 @@
     - variable: CONFIG_PATH
       label: "Where to put configs"
       required: false
-      default: /plex_config
+      default: /data/plex_config
     - variable: TRANSCODE_PATH
       label: "Where to put temporary transcodefiles"
       required: false
       required: false
-      default: /plex_transcode
+      default: /data/plex_transcode
     - variable: DATA_PATH
       label: "Where to find media"
       required: false
@@ -45,12 +46,12 @@
     - variable: NFS_SERVER
       label: "NFS-server"
       required: true
-      default: 10.0.0.3
+      default: 0.0.0.0
       type: "string"
     - variable: NFS_SHARE
       label: "NFS-share"
       required: true
-      default: /mnt/store/media
+      default: /path/for/media
       type: "string"
     - variable: NFS_OPT
       label: "NFs options"

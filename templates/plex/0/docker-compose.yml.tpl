@@ -27,6 +27,6 @@ volumes:
     driver: rancher-nfs
     driver_opts:
       host: ${NFS_SERVER} 
-      export: /mnt/store/media
+      export: ${NFS_SHARE}
       onRemove: retain
 
