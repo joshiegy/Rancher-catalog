@@ -2,11 +2,9 @@ version: '2'
 services:
   gitea:
     image: gitea/gitea:1.3.0
-    expose:
-      - "22"
-      - "3000"
     volumes:
       - gitea-data:/data
+
 {{- if ne .Values.db_link ""}}
     external_links:
       - ${db_link}:db
@@ -23,8 +21,6 @@ services:
 {{- end}}
   lb:
     image: rancher/lb-service-haproxy:v0.9.1
-    links:
-      - gitea:gitea
     ports:
     - ${http_port}:${http_port}/tcp
     - ${ssh_port}:${ssh_port}/tcp
