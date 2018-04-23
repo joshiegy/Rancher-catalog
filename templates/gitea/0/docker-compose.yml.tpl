@@ -22,7 +22,9 @@ services:
       - gitea-db:/var/lib/mysql
 {{- end}}
   lb:
-    image: rancher/lb-service-haproxy:v0.7.9
+    image: rancher/lb-service-haproxy:v0.9.1
+    links:
+      - gitea:gitea
     ports:
     - ${http_port}:${http_port}/tcp
     - ${ssh_port}:${ssh_port}/tcp
