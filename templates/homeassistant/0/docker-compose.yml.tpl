@@ -5,7 +5,6 @@ services:
     image: homeassistant/home-assistant
     volumes:
       - nfs:/config
-      - /etc/localtime:/etc/localtime:ro
 {{- if eq .Values.DEVICES "true" }}
     devices:
 {{- if eq .Values.ttyUSB0 "true" }}
