@@ -4,15 +4,15 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
-{{ if or (eq .Values.PLEX_DLNA "true") (eq .Values.PLEX_APP_CONT "true") (eq .Values.PLEX_ROKU "true") (eq .Values.PLEX_GDM "true")}}      ports: {{ end }}
-{{ if eq .Values.PLEX_DLNA "true" }}      - 1900:1900/udp {{ end }}
-{{ if eq .Values.PLEX_APP_CONT "true" }}      - 3005:3005/tcp {{ end }}
-{{ if eq .Values.PLEX_ROKU "true" }}      - 8324:8324/tcp {{ end }}
-{{ if eq .Values.PLEX_DLNA "true" }}      - 32469:32469/tcp {{ end }}
-{{ if eq .Values.PLEX_GDM "true" }}      - 32410:32410/udp {{ end }}
-{{ if eq .Values.PLEX_GDM "true" }}      - 32412:32412/udp {{ end }}
-{{ if eq .Values.PLEX_GDM "true" }}      - 32413:32413/udp {{ end }}
-{{ if eq .Values.PLEX_GDM "true" }}      - 32414:32414/udp {{ end }}
+{{- if or (eq .Values.PLEX_DLNA "true") (eq .Values.PLEX_APP_CONT "true") (eq .Values.PLEX_ROKU "true") (eq .Values.PLEX_GDM "true")}}      ports: {{ end }}
+{{- if eq .Values.PLEX_DLNA "true" }}      - 1900:1900/udp {{ end }}
+{{- if eq .Values.PLEX_APP_CONT "true" }}      - 3005:3005/tcp {{ end }}
+{{- if eq .Values.PLEX_ROKU "true" }}      - 8324:8324/tcp {{ end }}
+{{- if eq .Values.PLEX_DLNA "true" }}      - 32469:32469/tcp {{ end }}
+{{- if eq .Values.PLEX_GDM "true" }}      - 32410:32410/udp {{ end }}
+{{- if eq .Values.PLEX_GDM "true" }}      - 32412:32412/udp {{ end }}
+{{- if eq .Values.PLEX_GDM "true" }}      - 32413:32413/udp {{ end }}
+{{- if eq .Values.PLEX_GDM "true" }}      - 32414:32414/udp {{ end }}
     environment:
       TZ: ${TZ}
       PLEX_CLAIM: ${claimToken}
