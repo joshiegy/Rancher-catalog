@@ -23,8 +23,10 @@ services:
 volumes:
   nfs:
     driver: rancher-nfs
+{{- if eq .Values.CUSTOM_NFS }}
     driver_opts:
       host: ${NFS_SERVER} 
       export: ${NFS_SHARE}
       onRemove: retain
+{{- end }}
 

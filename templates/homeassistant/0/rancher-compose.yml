@@ -26,6 +26,12 @@ catalog:
       required: true
       default: false
       type: boolean
+    - varaible: CUSTOM_NFS
+      label: Activate custom NFS share
+      description: "mount a special volume instead of the default rancher-nfs"
+      required: true
+      default: false
+      type: boolean
     - variable: NFS_SERVER
       label: "NFS-server"
       required: true
