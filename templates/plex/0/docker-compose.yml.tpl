@@ -5,7 +5,7 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
-{{- if or (eq .Values.PLEX_DLNA "true") (eq .Values.PLEX_APP_CONT "true") (eq .Values.PLEX_ROKU "true") (eq .Values.PLEX_GDM "true")}}    ports:{{ end }}
+    ports:
 {{- if eq .Values.PLEX_DLNA "true" }}
       - 1900:1900/udp 
       - 32469:32469/tcp
