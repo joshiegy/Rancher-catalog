@@ -5,15 +5,23 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
-    ports:
+{{- if or (eq .Values.PLEX_DLNA "true") (eq .Values.PLEX_APP_CONT "true") (eq .Values.PLEX_ROKU "true") (eq .Values.PLEX_GDM "true")}}    ports:{{ end }}
+{{- if eq .Values.PLEX_DLNA "true" }}
       - 1900:1900/udp 
-      - 3005:3005/tcp
-      - 8324:8324/tcp
       - 32469:32469/tcp
+{{- end }}
+{{- if eq .Values.PLEX_APP_CONT "true" }}
+      - 3005:3005/tcp
+{{- end }}
+{{- if eq .Values.PLEX_ROKU "true" }}
+      - 8324:8324/tcp
+{{- end }}
+{{- if eq .Values.PLEX_GDM "true" }}
       - 32410:32410/udp
       - 32412:32412/udp
       - 32413:32413/udp
       - 32414:32414/udp
+{{- end }}
     environment:
       TZ: ${TZ}
       PLEX_CLAIM: ${claimToken}
@@ -23,6 +31,7 @@ services:
       - nfsmedia:/data
   plex-lb:
     scale: 1
+    image: rancher/lb-service-haproxy:v0.9.1
     lb_config:
       port_rules:
         - source_port: ${PLEX_PUBLIC_PORT}
