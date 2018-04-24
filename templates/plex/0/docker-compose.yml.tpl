@@ -32,6 +32,8 @@ services:
   plex-lb:
     scale: 1
     image: rancher/lb-service-haproxy:v0.9.1
+    ports:
+      - ${PLEX_PUBLIC_PORT}:${PLEX_PUBLIC_PORT}/tcp
     lb_config:
       port_rules:
         - source_port: ${PLEX_PUBLIC_PORT}
