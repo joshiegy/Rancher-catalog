@@ -5,6 +5,12 @@ catalog:
   description: |
       (Experimental) Home assistant - the easy home automation platform
   questions:
+    - varaible: DEVICES
+      label: Activate Devices
+      description: "Set to true if you want to add any device"
+      required: true
+      default: false
+      type: boolean
     - varaible: ttyUSB0
       label: Give access to ttyUSB0?
       required: true

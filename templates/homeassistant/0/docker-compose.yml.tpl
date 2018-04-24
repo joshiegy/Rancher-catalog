@@ -6,10 +6,18 @@ services:
     volumes:
       - nfs:/config
       - /etc/localtime:/etc/localtime:ro
+{{- if eq .Values.DEVICES "true" }}
     devices:
-{{ if eq .Values.ttyUSB0 "true" }}      - /dev/ttyUSB0:/dev/ttyUSB0 {{ end }}
-{{ if eq .Values.ttyUSB1 "true" }}      - /dev/ttyUSB1:/dev/ttyUSB1 {{ end }}
-{{ if eq .Values.ttyACM0 "true" }}      - /dev/ttyACM0:/dev/ttyACM0 {{ end }}
+{{- if eq .Values.ttyUSB0 "true" }}
+      - /dev/ttyUSB0:/dev/ttyUSB0
+{{- end }}
+{{- if eq .Values.ttyUSB1 "true" }}
+      - /dev/ttyUSB1:/dev/ttyUSB1
+{{- end }}
+{{- if eq .Values.ttyACM0 "true" }}
+      - /dev/ttyACM0:/dev/ttyACM0
+{{- end }}
+{{- end }}
     restart: always
     network_mode: host   
 volumes:
