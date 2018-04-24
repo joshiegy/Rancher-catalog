@@ -5,24 +5,14 @@ services:
     image: plexinc/pms-docker
     restart: unless-stopped
       ports:
-{{ if eq .Values.PLEX_DLNA "true" }}
       - 1900:1900/udp 
-{{- end }}
-{{ if eq .Values.PLEX_APP_CONT "true" }}
       - 3005:3005/tcp
-{{- end }}
-{{ if eq .Values.PLEX_ROKU "true" }}
       - 8324:8324/tcp
-{{- end }}
-{{ if eq .Values.PLEX_DLNA "true" }}
       - 32469:32469/tcp
-{{- end }}
-{{ if eq .Values.PLEX_GDM "true" }}
       - 32410:32410/udp
       - 32412:32412/udp
       - 32413:32413/udp
       - 32414:32414/udp
-{{- end }}
     environment:
       TZ: ${TZ}
       PLEX_CLAIM: ${claimToken}
