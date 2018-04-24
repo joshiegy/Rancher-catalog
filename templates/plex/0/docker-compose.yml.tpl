@@ -5,7 +5,7 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
-      ports:
+    ports:
       - 1900:1900/udp 
       - 3005:3005/tcp
       - 8324:8324/tcp
