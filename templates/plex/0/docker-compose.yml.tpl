@@ -22,20 +22,20 @@ services:
       - ${TRANSCODE}:/transcode
       - nfsmedia:/data
   plex-lb:
-  scale: 1
-  lb_config:
-    port_rules:
-      - source_port: ${PLEX_PUBLIC_PORT}
-        target_port: 32400
-        service: plex
-        protocol: tcp
-    health_check:
-      port: 42
-      interval: 2000
-      unhealthy_threshold: 3
-      healthy_threshold: 2
-      response_timeout: 2000
-      strategy: recreate
+    scale: 1
+    lb_config:
+      port_rules:
+        - source_port: ${PLEX_PUBLIC_PORT}
+          target_port: 32400
+          service: plex
+          protocol: tcp
+      health_check:
+        port: 42
+        interval: 2000
+        unhealthy_threshold: 3
+        healthy_threshold: 2
+        response_timeout: 2000
+        strategy: recreate
 volumes:
   nfsmedia:
     driver: rancher-nfs
