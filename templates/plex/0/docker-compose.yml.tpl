@@ -17,7 +17,6 @@ services:
     environment:
       TZ: ${TZ}
       PLEX_CLAIM: ${claimToken}
-      ADVERTISE_IP: ${Advertise_IP}/
     volumes:
       - ${CONFIG_PATH}:/config
       - ${TRANSCODE}:/transcode

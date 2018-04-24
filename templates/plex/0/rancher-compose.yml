@@ -5,6 +5,30 @@ catalog:
   description: |
       (Experimental) Plex mediaserver
   questions:
+    - variable: PLEX_DLNA
+      label: Plex DLNA
+      description: Access to PLEX over DLNA
+      required: true
+      default: true
+      type: boolean
+    - variable: PLEX_APP_CONT
+      label: Plex Appcontrol
+      description: Possibility to control plex with app?
+      required: true
+      default: true
+      type: boolean
+    - variable: PLEX_ROKU
+      label: Plex Rokucontrol
+      description: Let Roku control PLEX?
+      required: true
+      default: false
+      type: boolean
+    - variable: PLEX_GDM
+      label: Plex GDM autodiscovery
+      description: Let GDM-enabled hosts find PLEX?
+      required: true
+      default: false
+      type: boolean
     - variable: TZ
       description: "Timezone"
       label: "Timezone"
@@ -17,6 +41,12 @@ catalog:
       required: true
       default: "Null"
       type: "string"
+    - variable: PLEX_PUBLIC_PORT
+      description: "Ip of the service hosting plex and port"
+      label: "Plex public port"
+      required: true
+      default: 32400
+      type: int
     - variable: Advertise_IP
       description: "Ip of the service hosting plex and port"
       label: "Host IP"
