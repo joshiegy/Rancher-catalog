@@ -5,6 +5,21 @@ catalog:
   description: |
       (Experimental) Home assistant - the easy home automation platform
   questions:
+    - varaible: ttyUSB0
+      label: Give access to ttyUSB0?
+      required: true
+      default: false
+      type: boolean
+    - varaible: ttyUSB1
+      label: Give access to ttyUSB1?
+      required: true
+      default: false
+      type: boolean
+    - varaible: ttyACM0
+      label: Give access to ttyACM0?
+      required: true
+      default: false
+      type: boolean
     - variable: NFS_SERVER
       label: "NFS-server"
       required: true
